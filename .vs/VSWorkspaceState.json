@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\PhoneStoreWeb",
+    "\\PhoneStoreWeb\\PhoneStoreWeb",
+    "\\PhoneStoreWeb\\PhoneStoreWeb\\Controllers",
+    "\\PhoneStoreWeb\\PhoneStoreWeb\\Views",
+    "\\PhoneStoreWeb\\PhoneStoreWeb\\Views\\Home",
+    "\\PhoneStoreWeb\\PhoneStoreWeb\\Views\\Shared"
+  ],
+  "SelectedNode": "\\PhoneStoreWeb\\PhoneStoreWeb\\Controllers\\MenuController.cs",
+  "PreviewInSolutionExplorer": false
+}

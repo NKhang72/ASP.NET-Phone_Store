@@ -34,9 +34,7 @@
             <div class="top_nav">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="top_nav_left">free shipping on all u.s orders over $50</div>
-                        </div>
+                        @{Html.RenderAction("getAds", "HeaderAds"); }
                         <div class="col-md-6 text-right">
                             <div class="top_nav_right">
                                 <ul class="top_nav_menu">
@@ -96,19 +94,7 @@
 
                             </div>
                             <nav class="navbar">
-                                <ul class="navbar_menu">
-                                    <li>
-                                        @Html.ActionLink("Home", "Index", "Home")
-                                    </li>
-                                    @*<li><a href="#">shop</a></li>
-                                        <li><a href="#">promotion</a></li>
-                                        <li><a href="#">pages</a></li>
-                                        <li><a href="#">blog</a></li>*@
-                                    <li>
-                                        @Html.ActionLink("Contact", "Index", "Contact")
-
-                                    </li>
-                                </ul>
+                                @{Html.RenderAction("getMenu", "Menu"); }
                                 <ul class="navbar_user">
                                     <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
                                     <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>
