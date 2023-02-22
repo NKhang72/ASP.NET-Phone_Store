@@ -186,5 +186,9 @@
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ads" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="DateCreate" Type="DateTime" Precision="0" />
+    <Property Name="Createby" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Link" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EndDate" Type="DateTime" Precision="0" />
   </EntityType>
 </Schema>

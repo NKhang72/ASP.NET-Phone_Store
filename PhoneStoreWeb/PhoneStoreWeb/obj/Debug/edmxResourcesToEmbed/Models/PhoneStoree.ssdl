@@ -42,6 +42,10 @@
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ads" Type="nvarchar" MaxLength="1000" />
+    <Property Name="DateCreate" Type="date" />
+    <Property Name="Createby" Type="nvarchar" MaxLength="100" />
+    <Property Name="Link" Type="varchar" MaxLength="100" />
+    <Property Name="EndDate" Type="date" />
   </EntityType>
   <EntityType Name="tb_Menu">
     <Key>

@@ -47,6 +47,10 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ads" Type="nvarchar" MaxLength="1000" />
+          <Property Name="DateCreate" Type="date" />
+          <Property Name="Createby" Type="nvarchar" MaxLength="100" />
+          <Property Name="Link" Type="varchar" MaxLength="100" />
+          <Property Name="EndDate" Type="date" />
         </EntityType>
         <EntityType Name="tb_Menu">
           <Key>
@@ -382,6 +386,10 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ads" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="DateCreate" Type="DateTime" Precision="0" />
+          <Property Name="Createby" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Link" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EndDate" Type="DateTime" Precision="0" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -569,6 +577,10 @@
           <EntitySetMapping Name="tb_Header">
             <EntityTypeMapping TypeName="PSModel.tb_Header">
               <MappingFragment StoreEntitySet="tb_Header">
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Createby" ColumnName="Createby" />
+                <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
                 <ScalarProperty Name="ads" ColumnName="ads" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>

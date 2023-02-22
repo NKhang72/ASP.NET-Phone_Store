@@ -16,5 +16,9 @@ namespace PhoneStoreWeb.Models
     {
         public int id { get; set; }
         public string ads { get; set; }
+        public Nullable<System.DateTime> DateCreate { get; set; }
+        public string Createby { get; set; }
+        public string Link { get; set; }
+        public Nullable<System.DateTime> EndDate { get; set; }
     }
 }

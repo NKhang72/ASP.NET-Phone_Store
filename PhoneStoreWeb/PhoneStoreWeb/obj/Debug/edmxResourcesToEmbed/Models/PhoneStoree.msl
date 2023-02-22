@@ -181,6 +181,10 @@
     <EntitySetMapping Name="tb_Header">
       <EntityTypeMapping TypeName="PSModel.tb_Header">
         <MappingFragment StoreEntitySet="tb_Header">
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="Createby" ColumnName="Createby" />
+          <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
           <ScalarProperty Name="ads" ColumnName="ads" />
           <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>

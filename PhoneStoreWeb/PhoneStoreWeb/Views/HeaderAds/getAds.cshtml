@@ -1,8 +1,13 @@
 ﻿@model IEnumerable<PhoneStoreWeb.Models.tb_Header>
 <div class="col-md-6">
-    
-    <div class="top_nav_left">@Model.Last().ads</div>
-    
-   
+    @if (Model.Last().EndDate <= DateTime.Now)
+    {
+        <div class="top_nav_left">@Model.Last().ads</div>
+    }
+    else { <div class="top_nav_left"> </div>
+    }
+
+
+
 </div>
 

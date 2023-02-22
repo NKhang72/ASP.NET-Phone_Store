@@ -132,6 +132,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\HamburgerMenuController.cs" />
     <Compile Include="Controllers\HeaderAdsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
@@ -345,6 +346,7 @@
     <None Include="Views\Category\Index.cshtml" />
     <Content Include="Views\Menu\getMenu.cshtml" />
     <Content Include="Views\HeaderAds\getAds.cshtml" />
+    <Content Include="Views\HamburgerMenu\getHamburgerMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
