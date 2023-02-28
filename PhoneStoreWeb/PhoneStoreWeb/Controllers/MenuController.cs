@@ -24,5 +24,19 @@ namespace PhoneStoreWeb.Controllers
                    select t;
             return PartialView(v.ToList());
         }
+        public ActionResult getAds()
+        {
+            var v = from t in db.tb_Header
+                    where t.ads != null
+                    select t;
+            return PartialView(v.ToList());
+        }
+        public ActionResult getHamburgerMenu()
+        {
+            var v = from t in db.tb_Menu
+                    where t.Hide == true
+                    select t;
+            return PartialView(v.ToList());
+        }
     }
 }

@@ -6,8 +6,9 @@
     "\\PhoneStoreWeb\\PhoneStoreWeb\\Controllers",
     "\\PhoneStoreWeb\\PhoneStoreWeb\\Views",
     "\\PhoneStoreWeb\\PhoneStoreWeb\\Views\\Home",
+    "\\PhoneStoreWeb\\PhoneStoreWeb\\Views\\Menu",
     "\\PhoneStoreWeb\\PhoneStoreWeb\\Views\\Shared"
   ],
-  "SelectedNode": "\\PhoneStoreWeb\\PhoneStoreWeb\\Views\\Shared\\_Layout.cshtml",
+  "SelectedNode": "\\PhoneStoreWeb\\PhoneStoreWeb\\Views\\Menu\\getNews.cshtml",
   "PreviewInSolutionExplorer": false
 }
