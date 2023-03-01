@@ -45,9 +45,10 @@ namespace PhoneStoreWeb.Controllers
         }
         public ActionResult getProduct()
         {
-            var v = from t in db.tb_Product
+            var v = (from t in db.tb_Product
                     where t.Hide == true
-                    select t;
+                     orderby t.CreateDate descending
+                     select t).Take(8);
             return PartialView(v.ToList());
         }
     }
