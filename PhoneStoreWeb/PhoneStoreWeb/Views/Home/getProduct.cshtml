@@ -1,0 +1,82 @@
+﻿@model IEnumerable<PhoneStoreWeb.Models.tb_Product>
+
+<div class="row">
+    <div class="col">
+        <div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
+            @foreach (var i in Model)
+            {
+
+                if (i.ProductCategory == "Phone")
+                {
+                    <div class="product-item phone">
+                        <div class="product discount product_filter">
+                            <div class="product_image">
+                                <img src="@i.Image" alt="">
+                            </div>
+                            <div class="favorite favorite_left"></div>
+                            <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
+                            <div class="product_info">
+                                <h6 class="product_name"><a href="single.html">@i.Title</a></h6>
+                                <div class="product_price">@i.PriceSale<span>@i.Price</span></div>
+                            </div>
+                        </div>
+                        <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
+                    </div>
+                }
+                else if (i.ProductCategory == "Laptop")
+                {
+                    <div class="product-item laptop">
+                        <div class="product discount product_filter">
+                            <div class="product_image">
+                                <img src="@i.Image" alt="">
+                            </div>
+                            <div class="favorite favorite_left"></div>
+                            <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
+                            <div class="product_info">
+                                <h6 class="product_name"><a href="single.html">@i.Title</a></h6>
+                                <div class="product_price">@i.PriceSale<span>@i.Price</span></div>
+                            </div>
+                        </div>
+                        <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
+                    </div>
+                }
+                else if (i.ProductCategory == "Tablet")
+                {
+                    <div class="product-item tablet">
+                        <div class="product discount product_filter">
+                            <div class="product_image">
+                                <img src="@i.Image" alt="">
+                            </div>
+                            <div class="favorite favorite_left"></div>
+                            <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
+                            <div class="product_info">
+                                <h6 class="product_name"><a href="single.html">@i.Title</a></h6>
+                                <div class="product_price">@i.PriceSale<span>@i.Price</span></div>
+                            </div>
+                        </div>
+                        <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
+                    </div>
+                }
+                else
+                {
+                    <div class="product-item accessories">
+                        <div class="product discount product_filter">
+                            <div class="product_image">
+                                <img src="@i.Image" alt="">
+                            </div>
+                            <div class="favorite favorite_left"></div>
+                            <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
+                            <div class="product_info">
+                                <h6 class="product_name"><a href="single.html">@i.Title</a></h6>
+                                <div class="product_price">@i.PriceSale<span>@i.Price</span></div>
+                            </div>
+                        </div>
+                        <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
+                    </div>
+                }
+
+            }
+
+        </div>
+    </div>
+

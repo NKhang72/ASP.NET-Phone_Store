@@ -16,7 +16,6 @@ namespace PhoneStoreWeb.Models
     {
         public int id { get; set; }
         public string Title { get; set; }
-        public Nullable<int> ProductCategoryID { get; set; }
         public string Description { get; set; }
         public string Detail { get; set; }
         public string Image { get; set; }
@@ -33,5 +32,6 @@ namespace PhoneStoreWeb.Models
         public string CreateBy { get; set; }
         public Nullable<System.DateTime> ModifierDate { get; set; }
         public string ModifierBy { get; set; }
+        public string ProductCategory { get; set; }
     }
 }

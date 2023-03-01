@@ -118,31 +118,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="tb_Product">
-      <EntityTypeMapping TypeName="PSModel.tb_Product">
-        <MappingFragment StoreEntitySet="tb_Product">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="ProductCategoryID" ColumnName="ProductCategoryID" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="Detail" ColumnName="Detail" />
-          <ScalarProperty Name="Image" ColumnName="Image" />
-          <ScalarProperty Name="Price" ColumnName="Price" />
-          <ScalarProperty Name="PriceSale" ColumnName="PriceSale" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="SeoTitle" ColumnName="SeoTitle" />
-          <ScalarProperty Name="SeoDesscription" ColumnName="SeoDesscription" />
-          <ScalarProperty Name="SeoKeywords" ColumnName="SeoKeywords" />
-          <ScalarProperty Name="Meta" ColumnName="Meta" />
-          <ScalarProperty Name="Hide" ColumnName="Hide" />
-          <ScalarProperty Name="Position" ColumnName="Position" />
-          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
-          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
-          <ScalarProperty Name="ModifierDate" ColumnName="ModifierDate" />
-          <ScalarProperty Name="ModifierBy" ColumnName="ModifierBy" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="tb_ProductCategory">
       <EntityTypeMapping TypeName="PSModel.tb_ProductCategory">
         <MappingFragment StoreEntitySet="tb_ProductCategory">
@@ -186,6 +161,31 @@
           <ScalarProperty Name="Createby" ColumnName="Createby" />
           <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
           <ScalarProperty Name="ads" ColumnName="ads" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_Product">
+      <EntityTypeMapping TypeName="PSModel.tb_Product">
+        <MappingFragment StoreEntitySet="tb_Product">
+          <ScalarProperty Name="ProductCategory" ColumnName="ProductCategory" />
+          <ScalarProperty Name="ModifierBy" ColumnName="ModifierBy" />
+          <ScalarProperty Name="ModifierDate" ColumnName="ModifierDate" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Hide" ColumnName="Hide" />
+          <ScalarProperty Name="Meta" ColumnName="Meta" />
+          <ScalarProperty Name="SeoKeywords" ColumnName="SeoKeywords" />
+          <ScalarProperty Name="SeoDesscription" ColumnName="SeoDesscription" />
+          <ScalarProperty Name="SeoTitle" ColumnName="SeoTitle" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="PriceSale" ColumnName="PriceSale" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>

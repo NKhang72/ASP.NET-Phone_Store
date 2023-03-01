@@ -128,7 +128,6 @@
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Title" Type="nvarchar" MaxLength="250" />
-    <Property Name="ProductCategoryID" Type="int" />
     <Property Name="Description" Type="nvarchar" MaxLength="4000" />
     <Property Name="Detail" Type="nvarchar(max)" />
     <Property Name="Image" Type="nvarchar" MaxLength="500" />
@@ -145,6 +144,7 @@
     <Property Name="CreateBy" Type="nvarchar" MaxLength="100" />
     <Property Name="ModifierDate" Type="datetime" />
     <Property Name="ModifierBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="ProductCategory" Type="nvarchar" MaxLength="250" />
   </EntityType>
   <EntityType Name="tb_ProductCategory">
     <Key>

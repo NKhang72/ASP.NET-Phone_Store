@@ -1,0 +1,15 @@
+﻿@model IEnumerable<PhoneStoreWeb.Models.tb_ProductCategory>
+<div class="row">
+    @foreach (var i in Model)
+    {
+    <div class="col-md-3">
+        <p><img style="display: block; margin-left: auto;margin-right: auto;width: 50%;" src="@i.Icon" /></p>
+        <div class="banner_category">
+
+            @Html.ActionLink(i.Title, "Index", "Category")
+        </div>
+    </div>
+    }
+    
+</div>
+

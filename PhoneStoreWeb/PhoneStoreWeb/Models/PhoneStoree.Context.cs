@@ -31,10 +31,10 @@ namespace PhoneStoreWeb.Models
         public virtual DbSet<tb_News> tb_News { get; set; }
         public virtual DbSet<tb_Order> tb_Order { get; set; }
         public virtual DbSet<tb_OrderDetail> tb_OrderDetail { get; set; }
-        public virtual DbSet<tb_Product> tb_Product { get; set; }
         public virtual DbSet<tb_ProductCategory> tb_ProductCategory { get; set; }
         public virtual DbSet<tb_Subcribe> tb_Subcribe { get; set; }
         public virtual DbSet<tb_SystemSetting> tb_SystemSetting { get; set; }
         public virtual DbSet<tb_Header> tb_Header { get; set; }
+        public virtual DbSet<tb_Product> tb_Product { get; set; }
     }
 }

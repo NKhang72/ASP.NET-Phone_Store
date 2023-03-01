@@ -133,7 +133,6 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Title" Type="nvarchar" MaxLength="250" />
-          <Property Name="ProductCategoryID" Type="int" />
           <Property Name="Description" Type="nvarchar" MaxLength="4000" />
           <Property Name="Detail" Type="nvarchar(max)" />
           <Property Name="Image" Type="nvarchar" MaxLength="500" />
@@ -150,6 +149,7 @@
           <Property Name="CreateBy" Type="nvarchar" MaxLength="100" />
           <Property Name="ModifierDate" Type="datetime" />
           <Property Name="ModifierBy" Type="nvarchar" MaxLength="100" />
+          <Property Name="ProductCategory" Type="nvarchar" MaxLength="250" />
         </EntityType>
         <EntityType Name="tb_ProductCategory">
           <Key>
@@ -311,30 +311,6 @@
           <Property Name="ModifierDate" Type="DateTime" Precision="3" />
           <Property Name="ModifierBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="tb_Product">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="ProductCategoryID" Type="Int32" />
-          <Property Name="Description" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
-          <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Image" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="PriceSale" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="Quantity" Type="Int32" />
-          <Property Name="SeoTitle" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="SeoDesscription" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="SeoKeywords" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="Meta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Hide" Type="Boolean" />
-          <Property Name="Position" Type="Int32" />
-          <Property Name="CreateDate" Type="DateTime" Precision="3" />
-          <Property Name="CreateBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="ModifierDate" Type="DateTime" Precision="3" />
-          <Property Name="ModifierBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="tb_ProductCategory">
           <Key>
             <PropertyRef Name="id" />
@@ -374,11 +350,11 @@
           <EntitySet Name="tb_News" EntityType="Self.tb_News" />
           <EntitySet Name="tb_Order" EntityType="Self.tb_Order" />
           <EntitySet Name="tb_OrderDetail" EntityType="Self.tb_OrderDetail" />
-          <EntitySet Name="tb_Product" EntityType="Self.tb_Product" />
           <EntitySet Name="tb_ProductCategory" EntityType="Self.tb_ProductCategory" />
           <EntitySet Name="tb_Subcribe" EntityType="Self.tb_Subcribe" />
           <EntitySet Name="tb_SystemSetting" EntityType="Self.tb_SystemSetting" />
           <EntitySet Name="tb_Header" EntityType="PSModel.tb_Header" />
+          <EntitySet Name="tb_Product" EntityType="PSModel.tb_Product" />
         </EntityContainer>
         <EntityType Name="tb_Header">
           <Key>
@@ -390,6 +366,30 @@
           <Property Name="Createby" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Link" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="EndDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="tb_Product">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="PriceSale" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="SeoTitle" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="SeoDesscription" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SeoKeywords" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Meta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Hide" Type="Boolean" />
+          <Property Name="Position" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreateBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ModifierDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifierBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ProductCategory" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -514,31 +514,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="tb_Product">
-            <EntityTypeMapping TypeName="PSModel.tb_Product">
-              <MappingFragment StoreEntitySet="tb_Product">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="ProductCategoryID" ColumnName="ProductCategoryID" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="Detail" ColumnName="Detail" />
-                <ScalarProperty Name="Image" ColumnName="Image" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="PriceSale" ColumnName="PriceSale" />
-                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-                <ScalarProperty Name="SeoTitle" ColumnName="SeoTitle" />
-                <ScalarProperty Name="SeoDesscription" ColumnName="SeoDesscription" />
-                <ScalarProperty Name="SeoKeywords" ColumnName="SeoKeywords" />
-                <ScalarProperty Name="Meta" ColumnName="Meta" />
-                <ScalarProperty Name="Hide" ColumnName="Hide" />
-                <ScalarProperty Name="Position" ColumnName="Position" />
-                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
-                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
-                <ScalarProperty Name="ModifierDate" ColumnName="ModifierDate" />
-                <ScalarProperty Name="ModifierBy" ColumnName="ModifierBy" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="tb_ProductCategory">
             <EntityTypeMapping TypeName="PSModel.tb_ProductCategory">
               <MappingFragment StoreEntitySet="tb_ProductCategory">
@@ -582,6 +557,31 @@
                 <ScalarProperty Name="Createby" ColumnName="Createby" />
                 <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
                 <ScalarProperty Name="ads" ColumnName="ads" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Product">
+            <EntityTypeMapping TypeName="PSModel.tb_Product">
+              <MappingFragment StoreEntitySet="tb_Product">
+                <ScalarProperty Name="ProductCategory" ColumnName="ProductCategory" />
+                <ScalarProperty Name="ModifierBy" ColumnName="ModifierBy" />
+                <ScalarProperty Name="ModifierDate" ColumnName="ModifierDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Hide" ColumnName="Hide" />
+                <ScalarProperty Name="Meta" ColumnName="Meta" />
+                <ScalarProperty Name="SeoKeywords" ColumnName="SeoKeywords" />
+                <ScalarProperty Name="SeoDesscription" ColumnName="SeoDesscription" />
+                <ScalarProperty Name="SeoTitle" ColumnName="SeoTitle" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="PriceSale" ColumnName="PriceSale" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Detail" ColumnName="Detail" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
