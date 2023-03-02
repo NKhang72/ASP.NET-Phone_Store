@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="PSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="PhoneStoree" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="tb_Advertisement">
     <Key>
       <PropertyRef Name="id" />
@@ -35,6 +35,17 @@
     <Property Name="CreateBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="ModifierDate" Type="DateTime" Precision="3" />
     <Property Name="ModifierBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tb_Header">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ads" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="DateCreate" Type="DateTime" Precision="0" />
+    <Property Name="Createby" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Link" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EndDate" Type="DateTime" Precision="0" />
   </EntityType>
   <EntityType Name="tb_Menu">
     <Key>
@@ -111,6 +122,30 @@
     <Property Name="ModifierDate" Type="DateTime" Precision="3" />
     <Property Name="ModifierBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
   </EntityType>
+  <EntityType Name="tb_Product">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="PriceSale" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="SeoTitle" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="SeoDesscription" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SeoKeywords" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Meta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Hide" Type="Boolean" />
+    <Property Name="Position" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="CreateBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ModifierDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifierBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ProductCategory" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
   <EntityType Name="tb_ProductCategory">
     <Key>
       <PropertyRef Name="id" />
@@ -146,49 +181,14 @@
   <EntityContainer Name="PhoneStoreEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="tb_Advertisement" EntityType="Self.tb_Advertisement" />
     <EntitySet Name="tb_Contact" EntityType="Self.tb_Contact" />
+    <EntitySet Name="tb_Header" EntityType="Self.tb_Header" />
     <EntitySet Name="tb_Menu" EntityType="Self.tb_Menu" />
     <EntitySet Name="tb_News" EntityType="Self.tb_News" />
     <EntitySet Name="tb_Order" EntityType="Self.tb_Order" />
     <EntitySet Name="tb_OrderDetail" EntityType="Self.tb_OrderDetail" />
+    <EntitySet Name="tb_Product" EntityType="Self.tb_Product" />
     <EntitySet Name="tb_ProductCategory" EntityType="Self.tb_ProductCategory" />
     <EntitySet Name="tb_Subcribe" EntityType="Self.tb_Subcribe" />
     <EntitySet Name="tb_SystemSetting" EntityType="Self.tb_SystemSetting" />
-    <EntitySet Name="tb_Header" EntityType="PSModel.tb_Header" />
-    <EntitySet Name="tb_Product" EntityType="PSModel.tb_Product" />
   </EntityContainer>
-  <EntityType Name="tb_Header">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ads" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-    <Property Name="DateCreate" Type="DateTime" Precision="0" />
-    <Property Name="Createby" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="Link" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="EndDate" Type="DateTime" Precision="0" />
-  </EntityType>
-  <EntityType Name="tb_Product">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-    <Property Name="Description" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
-    <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Image" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
-    <Property Name="PriceSale" Type="Decimal" Precision="18" Scale="2" />
-    <Property Name="Quantity" Type="Int32" />
-    <Property Name="SeoTitle" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-    <Property Name="SeoDesscription" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="SeoKeywords" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-    <Property Name="Meta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Hide" Type="Boolean" />
-    <Property Name="Position" Type="Int32" />
-    <Property Name="CreateDate" Type="DateTime" Precision="3" />
-    <Property Name="CreateBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="ModifierDate" Type="DateTime" Precision="3" />
-    <Property Name="ModifierBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="ProductCategory" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-  </EntityType>
 </Schema>

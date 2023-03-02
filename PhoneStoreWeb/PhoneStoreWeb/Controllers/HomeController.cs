@@ -51,5 +51,20 @@ namespace PhoneStoreWeb.Controllers
                      select t).Take(8);
             return PartialView(v.ToList());
         }
+        public ActionResult getNews()
+        {
+            var v = (from t in db.tb_News
+                     where t.Hide == true
+                     orderby t.CreateDate descending
+                     select t).Take(3);
+            return PartialView(v.ToList());
+        }
+        public ActionResult getAdv()
+        {
+            var v = (from t in db.tb_Advertisement
+                    where t.Hide == true
+                    select t).Take(1);
+            return PartialView(v.ToList());
+        }
     }
 }

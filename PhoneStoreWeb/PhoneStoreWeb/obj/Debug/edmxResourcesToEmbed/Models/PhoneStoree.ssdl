@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="PSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="PhoneStoree.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="tb_Advertisement">
     <Key>
       <PropertyRef Name="id" />
@@ -178,7 +178,7 @@
     <Property Name="SettingValue" Type="nvarchar(max)" />
     <Property Name="SettingDescription" Type="nvarchar" MaxLength="250" />
   </EntityType>
-  <EntityContainer Name="PSModelStoreContainer">
+  <EntityContainer Name="PhoneStoreeStoreContainer">
     <EntitySet Name="tb_Advertisement" EntityType="Self.tb_Advertisement" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tb_Contact" EntityType="Self.tb_Contact" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tb_Header" EntityType="Self.tb_Header" Schema="dbo" store:Type="Tables" />

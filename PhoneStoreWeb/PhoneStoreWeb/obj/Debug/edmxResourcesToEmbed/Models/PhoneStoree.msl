@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="PSModelStoreContainer" CdmEntityContainer="PhoneStoreEntities1">
+  <EntityContainerMapping StorageEntityContainer="PhoneStoreeStoreContainer" CdmEntityContainer="PhoneStoreEntities1">
     <EntitySetMapping Name="tb_Advertisement">
-      <EntityTypeMapping TypeName="PSModel.tb_Advertisement">
+      <EntityTypeMapping TypeName="PhoneStoree.tb_Advertisement">
         <MappingFragment StoreEntitySet="tb_Advertisement">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="Title" ColumnName="Title" />
@@ -21,7 +21,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tb_Contact">
-      <EntityTypeMapping TypeName="PSModel.tb_Contact">
+      <EntityTypeMapping TypeName="PhoneStoree.tb_Contact">
         <MappingFragment StoreEntitySet="tb_Contact">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
@@ -39,8 +39,20 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tb_Header">
+      <EntityTypeMapping TypeName="PhoneStoree.tb_Header">
+        <MappingFragment StoreEntitySet="tb_Header">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ads" ColumnName="ads" />
+          <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
+          <ScalarProperty Name="Createby" ColumnName="Createby" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="tb_Menu">
-      <EntityTypeMapping TypeName="PSModel.tb_Menu">
+      <EntityTypeMapping TypeName="PhoneStoree.tb_Menu">
         <MappingFragment StoreEntitySet="tb_Menu">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="Title" ColumnName="Title" />
@@ -59,7 +71,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tb_News">
-      <EntityTypeMapping TypeName="PSModel.tb_News">
+      <EntityTypeMapping TypeName="PhoneStoree.tb_News">
         <MappingFragment StoreEntitySet="tb_News">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="Title" ColumnName="Title" />
@@ -81,7 +93,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tb_Order">
-      <EntityTypeMapping TypeName="PSModel.tb_Order">
+      <EntityTypeMapping TypeName="PhoneStoree.tb_Order">
         <MappingFragment StoreEntitySet="tb_Order">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="Code" ColumnName="Code" />
@@ -101,7 +113,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tb_OrderDetail">
-      <EntityTypeMapping TypeName="PSModel.tb_OrderDetail">
+      <EntityTypeMapping TypeName="PhoneStoree.tb_OrderDetail">
         <MappingFragment StoreEntitySet="tb_OrderDetail">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="OrderId" ColumnName="OrderId" />
@@ -118,8 +130,33 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tb_Product">
+      <EntityTypeMapping TypeName="PhoneStoree.tb_Product">
+        <MappingFragment StoreEntitySet="tb_Product">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="PriceSale" ColumnName="PriceSale" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="SeoTitle" ColumnName="SeoTitle" />
+          <ScalarProperty Name="SeoDesscription" ColumnName="SeoDesscription" />
+          <ScalarProperty Name="SeoKeywords" ColumnName="SeoKeywords" />
+          <ScalarProperty Name="Meta" ColumnName="Meta" />
+          <ScalarProperty Name="Hide" ColumnName="Hide" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="ModifierDate" ColumnName="ModifierDate" />
+          <ScalarProperty Name="ModifierBy" ColumnName="ModifierBy" />
+          <ScalarProperty Name="ProductCategory" ColumnName="ProductCategory" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="tb_ProductCategory">
-      <EntityTypeMapping TypeName="PSModel.tb_ProductCategory">
+      <EntityTypeMapping TypeName="PhoneStoree.tb_ProductCategory">
         <MappingFragment StoreEntitySet="tb_ProductCategory">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="Title" ColumnName="Title" />
@@ -136,7 +173,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tb_Subcribe">
-      <EntityTypeMapping TypeName="PSModel.tb_Subcribe">
+      <EntityTypeMapping TypeName="PhoneStoree.tb_Subcribe">
         <MappingFragment StoreEntitySet="tb_Subcribe">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="Email" ColumnName="Email" />
@@ -145,48 +182,11 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tb_SystemSetting">
-      <EntityTypeMapping TypeName="PSModel.tb_SystemSetting">
+      <EntityTypeMapping TypeName="PhoneStoree.tb_SystemSetting">
         <MappingFragment StoreEntitySet="tb_SystemSetting">
           <ScalarProperty Name="SettingKey" ColumnName="SettingKey" />
           <ScalarProperty Name="SettingValue" ColumnName="SettingValue" />
           <ScalarProperty Name="SettingDescription" ColumnName="SettingDescription" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tb_Header">
-      <EntityTypeMapping TypeName="PSModel.tb_Header">
-        <MappingFragment StoreEntitySet="tb_Header">
-          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-          <ScalarProperty Name="Link" ColumnName="Link" />
-          <ScalarProperty Name="Createby" ColumnName="Createby" />
-          <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
-          <ScalarProperty Name="ads" ColumnName="ads" />
-          <ScalarProperty Name="id" ColumnName="id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tb_Product">
-      <EntityTypeMapping TypeName="PSModel.tb_Product">
-        <MappingFragment StoreEntitySet="tb_Product">
-          <ScalarProperty Name="ProductCategory" ColumnName="ProductCategory" />
-          <ScalarProperty Name="ModifierBy" ColumnName="ModifierBy" />
-          <ScalarProperty Name="ModifierDate" ColumnName="ModifierDate" />
-          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
-          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
-          <ScalarProperty Name="Position" ColumnName="Position" />
-          <ScalarProperty Name="Hide" ColumnName="Hide" />
-          <ScalarProperty Name="Meta" ColumnName="Meta" />
-          <ScalarProperty Name="SeoKeywords" ColumnName="SeoKeywords" />
-          <ScalarProperty Name="SeoDesscription" ColumnName="SeoDesscription" />
-          <ScalarProperty Name="SeoTitle" ColumnName="SeoTitle" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="PriceSale" ColumnName="PriceSale" />
-          <ScalarProperty Name="Price" ColumnName="Price" />
-          <ScalarProperty Name="Image" ColumnName="Image" />
-          <ScalarProperty Name="Detail" ColumnName="Detail" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

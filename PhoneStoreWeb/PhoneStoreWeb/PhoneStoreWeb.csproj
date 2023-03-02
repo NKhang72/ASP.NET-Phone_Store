@@ -152,11 +152,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PhoneStoree.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\PhoneStoree1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PhoneStoree.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Models\tb_Advertisement.cs">
       <DependentUpon>PhoneStoree.tt</DependentUpon>
     </Compile>
@@ -216,6 +211,9 @@
     <Content Include="Content\images\laptop\macbook-air-m1-2020-gold-600x600.jpg" />
     <Content Include="Content\images\laptop\macbook-pro-14-m1-pro-2021-8-core-cpu-%2833%29.jpg" />
     <Content Include="Content\images\map_marker.png" />
+    <Content Include="Content\images\news\News_1.jpg" />
+    <Content Include="Content\images\news\News_2.jpg" />
+    <Content Include="Content\images\news\News_3.jpg" />
     <Content Include="Content\images\phone\iphone-11-trang-600x600.jpg" />
     <Content Include="Content\images\phone\iphone-13-pro-max-graphite-600x600.jpg" />
     <Content Include="Content\images\phone\iphone-13-starlight-1-600x600.jpg" />
@@ -324,7 +322,7 @@
     <Content Include="Content\plugins\themify-icons\fonts\themify.woff" />
     <EntityDeploy Include="Models\PhoneStoree.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PhoneStoree1.Designer.cs</LastGenOutput>
+      <LastGenOutput>PhoneStoree.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <Content Include="Models\PhoneStoree.edmx.diagram">
       <DependentUpon>PhoneStoree.edmx</DependentUpon>
@@ -366,6 +364,8 @@
     <Content Include="Views\Home\getBanner.cshtml" />
     <Content Include="Views\Home\getProduct.cshtml" />
     <Content Include="Views\Home\getCategories.cshtml" />
+    <Content Include="Views\Home\getNews.cshtml" />
+    <Content Include="Views\Home\getAdv.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

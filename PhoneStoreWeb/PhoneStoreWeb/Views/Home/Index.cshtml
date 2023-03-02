@@ -329,8 +329,19 @@
     </div>
 </div>
 
-<!-- Blogs -->
-
+<!-- News -->
+<div class="blogs">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <div class="section_title">
+                    <h2>Latest News</h2>
+                </div>
+            </div>
+        </div>
+        @{Html.RenderAction("getNews", "Home"); }
+    </div>
+</div>
 
 <!-- Newsletter -->
 
