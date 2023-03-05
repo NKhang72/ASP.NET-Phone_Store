@@ -1,0 +1,84 @@
+﻿@model IEnumerable<PhoneStoreWeb.Models.tb_Deal>
+@foreach (var i in Model)
+{
+    <div class="row align-items-center">
+        <div class="col-lg-6">
+            <div class="deal_ofthe_week_img">
+                <img src="@i.image" alt="">
+            </div>
+        </div>
+        <div class="col-lg-6 text-right deal_ofthe_week_col">
+            <div class="deal_ofthe_week_content d-flex flex-column align-items-center float-right">
+                <div class="section_title">
+                    <h2>@i.tiltle</h2>
+                </div>
+                <ul class="timer">
+                    <li class="d-inline-flex flex-column justify-content-center align-items-center">
+                        <div id="days" class="timer_num">03</div>
+                        <div class="timer_unit">Day</div>
+                    </li>
+                    <li class="d-inline-flex flex-column justify-content-center align-items-center">
+                        <div id="hours" class="timer_num">15</div>
+                        <div class="timer_unit">Hours</div>
+                    </li>
+                    <li class="d-inline-flex flex-column justify-content-center align-items-center">
+                        <div id="minutes" class="timer_num">45</div>
+                        <div class="timer_unit">Mins</div>
+                    </li>
+                    <li class="d-inline-flex flex-column justify-content-center align-items-center">
+                        <div id="seconds" class="timer_num">23</div>
+                        <div class="timer_unit">Sec</div>
+                    </li>
+
+                    <script>
+
+                        var endDate = new Date('2023-03-05').getTime();
+
+                        var countDownTimer = setInterval(() => {
+
+                            var now = new Date().getTime();
+
+                            var remainingTime = endDate - now;
+
+                            const second = 1000;
+
+                            const minute = second * 60;
+
+                            const hour = minute * 60;
+
+                            const day = hour * 24;
+
+                            daysLeft = Math.trunc(remainingTime / day);
+
+                            hoursLeft = Math.trunc((remainingTime % day) / hour);
+
+                            minutesLeft = Math.trunc((remainingTime % hour) / minute);
+
+                            secondsLeft = Math.trunc((remainingTime % minute) / second);
+
+                            document.querySelector('#days').innerHTML = daysLeft;
+
+                            document.querySelector('#hours').innerHTML = hoursLeft;
+
+                            document.querySelector('#minutes').innerHTML = minutesLeft;
+
+                            document.querySelector('#seconds').innerHTML = secondsLeft;
+
+                            if (remainingTime <= 0) {
+
+                                document.write('Time Up!');
+
+                            }
+
+                        }, 1000);
+
+                    </script>
+
+                </ul>
+                <div class="red_button deal_ofthe_week_button"><a href="#">shop now</a></div>
+            </div>
+        </div>
+    </div>
+    break;
+}
+

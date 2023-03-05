@@ -1265,7 +1265,7 @@ section
 	width: 120px;
 	height: 120px;
 	border-radius: 50%;
-	background: #FFFFFF;
+	background: #232530;
 	margin-right: 10px;
 }
 .timer li:last-child
@@ -1274,8 +1274,8 @@ section
 }
 .timer_num
 {
-	font-size: 48px;
-	font-weight: 600;
+	font-size: 25px;
+	font-weight: 300;
 	color: #fe4c50;
 	margin-top: 10px;
 }
@@ -1283,7 +1283,7 @@ section
 {
 	margin-top: 12px;
 	font-size: 16px;
-	font-weight: 500;
+	font-weight: 200;
 	color: #51545f;
 }
 .deal_ofthe_week_button
