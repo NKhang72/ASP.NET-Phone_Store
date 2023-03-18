@@ -19,7 +19,6 @@ namespace PhoneStoreWeb.Controllers
                     select t;
             return View();
         }
-
         public ActionResult getProductbyMeta(String meta)
         {
             var v = from t in db.tb_Product

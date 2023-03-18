@@ -66,6 +66,7 @@ namespace PhoneStoreWeb.Controllers
                     select t).Take(1);
             return PartialView(v.ToList());
         }
+        
         public ActionResult getDeal()
         {
             var v = (from t in db.tb_Deal
