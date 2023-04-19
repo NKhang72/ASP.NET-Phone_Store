@@ -72,14 +72,23 @@ namespace PhoneStoreWeb.Areas.Admin.Controllers
                 }
                 model.CreateDate = DateTime.Now;
                 model.ModifierDate = DateTime.Now;
-                var checkbox = Request.Form.GetValues("CheckBoxId")[0];
-                if (checkbox == "true")
+                var hide = Request.Form.GetValues("hide")[0];
+                var sale = Request.Form.GetValues("sale")[0];
+                if (hide == "true")
                 {
                     model.Hide = true;
                 }
                 else
                 {
                     model.Hide = false;
+                }
+                if (sale == "true")
+                {
+                    model.Sale = true;
+                }
+                else
+                {
+                    model.Sale = false;
                 }
                 if (string.IsNullOrEmpty(model.SeoTitle))
                 {
@@ -94,5 +103,78 @@ namespace PhoneStoreWeb.Areas.Admin.Controllers
             ViewBag.ProductCategory = new SelectList(db.tb_ProductCategory.ToList(), "id", "Title");
             return View(model);
         }
+
+        public ActionResult Edit(int id)
+        {
+            ViewBag.ProductCategory = new SelectList(db.tb_ProductCategory.ToList(), "id", "Title");
+            var item = db.tb_Product.Find(id);
+            return View(item);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
+        public ActionResult Edit(tb_Product model)
+        {
+            if (ModelState.IsValid)
+            {
+                model.ModifierDate = DateTime.Now;
+                model.Meta = model.Meta = PhoneStoreWeb.Models.Common.Filter.FilterChar(model.Title);
+                db.tb_Product.Attach(model);
+                db.Entry(model).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Delete(int id)
+        {
+            var item = db.tb_Product.Find(id);
+            if (item != null)
+            {
+                var checkImg = item.tb_ProductImage.Where(x => x.productId == item.id).ToList();
+                if (checkImg != null)
+                {
+                    foreach (var img in checkImg)
+                    {
+                        db.tb_ProductImage.Remove(img);
+                        db.SaveChanges();
+                    }
+                }
+                db.tb_Product.Remove(item);
+                db.SaveChanges();
+                return Json(new { success = true });
+            }
+
+            return Json(new { success = false });
+        }
+        [HttpPost]
+        public ActionResult deleteAll(String ids)
+        {
+            List<String> listIdString = ids.Split(',').ToList();
+            List<int> listId = listIdString.Select(int.Parse).ToList();
+            foreach (int id in listId)
+            {
+                var item = db.tb_Product.Find(id);
+                if (item != null)
+                {
+                    var checkImg = item.tb_ProductImage.Where(x => x.productId == item.id).ToList();
+                    if (checkImg != null)
+                    {
+                        foreach (var img in checkImg)
+                        {
+                            db.tb_ProductImage.Remove(img);
+                            db.SaveChanges();
+                        }
+                    }
+                    db.tb_Product.Remove(item);
+                    db.SaveChanges();
+                }
+            }
+            return Json(new { success = true });
+        }
     }
+
 }

@@ -76,8 +76,8 @@
                         <th>Danh mục</th>
                         <th>Số lượng</th>
                         <th>Giá</th>
+                        <th>Giá KM</th>
                         <th>Ngày tạo</th>
-                        <th>Home</th>
                         <th>Sale</th>
                         <th>Hiển thị</th>
 
@@ -92,7 +92,7 @@
                         {
                             var strCheck = item.Hide.Value ? "<i class='fa fa-check text-success'></i>" : "<i class='fas fa-times text-danger'></i>";
                             //var strCheckHome = item.IsHome ? "<i class='fa fa-check text-success'></i>" : "<i class='fas fa-times text-danger'></i>";
-                            //var strCheckSale = item.IsSale ? "<i class='fa fa-check text-success'></i>" : "<i class='fas fa-times text-danger'></i>";
+                            var strCheckSale = item.Sale.Value ? "<i class='fa fa-check text-success'></i>" : "<i class='fas fa-times text-danger'></i>";
                             var strImg = "";
                             var CheckImage = item.Image;
                             if (CheckImage != null)
@@ -104,16 +104,15 @@
                         <td>@i</td>
                         <td><img class="imgproduct" data-id="@item.id" src="@strImg" width="50" /></td>
                         <td>@item.Title</td>
-                        <td>@item.ProductCategory</td>
+                        <td>@item.tb_ProductCategory.Title</td>
                         <td>@item.Quantity</td>
-                        @*<td>@WebBanHangOnline.Common.Common.FormatNumber(item.Price, 0)</td>*@
+                        <td>@item.Price, 0</td>
+                        <td>@item.PriceSale, 0</td>
                         <td>@item.CreateDate.ToString()</td>
-                        @*<td class="text-center">
+                        <td class="text-center">
                             <a href='#' data-id="@item.id" class="btnHome">@Html.Raw(strCheckSale)</a>
                         </td>
-                        <td class="text-center">
-                            <a href='#' data-id="@item.id" class="btnSale">@Html.Raw(strCheckSale)</a>
-                        </td>*@
+
                         <td class="text-center">
                             <a href='#' data-id="@item.id" class="btnActive">@Html.Raw(strCheck)</a>
                         </td>
@@ -198,10 +197,10 @@
                     }
                 });
                 if (str.length > 0) {
-                    var conf = confirm('Bạn có muốn xóa các bản ghi này hay không?');
+                    var conf = confirm('Bạn có muốn xóa các bản ghi này hay không?'+str);
                     if (conf === true) {
                         $.ajax({
-                            url: '/admin/news/deleteAll',
+                            url: '/admin/Products/deleteAll',
                             type: 'POST',
                             data: { ids: str },
                             success: function (rs) {
