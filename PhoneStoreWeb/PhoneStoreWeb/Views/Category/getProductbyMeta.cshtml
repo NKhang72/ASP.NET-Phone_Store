@@ -14,7 +14,7 @@
             <div class="breadcrumbs d-flex flex-row align-items-center">
                 <ul>
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li><i class="fa fa-angle-right" aria-hidden="true"></i>@Model.First().ProductCategory</li>
+                    @*<li><i class="fa fa-angle-right" aria-hidden="true"></i>@Model.First().ProductCategory</li>*@
                 </ul>
             </div>
 
@@ -25,6 +25,7 @@
                     <div class="sidebar_title">
                         <h5>Product Category</h5>
                     </div>
+                   
                     @{Html.RenderAction("getCategoriesSlideBar", "Category"); }
                 </div>
 

@@ -6,7 +6,7 @@
         <p><img style="display: block; margin-left: auto;margin-right: auto;width: 50%;" src="@i.Icon" /></p>
         <div class="banner_category">
 
-            @Html.ActionLink(i.Title, "getProductbyMeta", "Category", new {@meta=i.Meta},null)
+            @Html.ActionLink(i.Title, "getProductbyMeta", "Category", new {i.id},null)
         </div>
     </div>
     }

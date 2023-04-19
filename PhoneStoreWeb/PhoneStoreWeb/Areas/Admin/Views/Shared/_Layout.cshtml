@@ -34,7 +34,7 @@
     <div class="wrapper">
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-           @RenderSection("naviheader")
+            @RenderSection("naviheader")
 
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
@@ -183,12 +183,12 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-    with font-awesome or any other icon font library -->
+                        with font-awesome or any other icon font library -->
                         <li class="nav-item">
                             <a href="/Admin/Category" class="nav-link">
                                 <i class="nav-icon fa fa-newspaper"></i>
                                 <p>
-                                Danh mục 
+                                    Danh mục
                                 </p>
                             </a>
                         </li>
@@ -249,16 +249,16 @@
                         </li>
                         <li class="nav-item">
                             <a href="../widgets.html" class="nav-link">
-                                <i class="nav-icon fa fa-picture"></i>
+                                <i class="nav-icon fa fa-square" aria-hidden="true"> </i>
                                 <p>
-                                    Quảng cáo slide
+                                    Slide
 
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
+                                <i class="nav-icon fa fa-gift" aria-hidden="true"></i>
                                 <p>
                                     Sale top
 
@@ -318,6 +318,8 @@
     <script src="/Content/admin/dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="/Content/admin/dist/js/demo.js"></script>
+
+    <script src="~/Scripts/autoNumeric.js"></script>
     <!-- Page specific script -->
     <script>
         $(function () {
@@ -451,8 +453,12 @@
         document.querySelector("#actions .cancel").onclick = function () {
             myDropzone.removeAllFiles(true)
         }
-      // DropzoneJS Demo Code End
+                    // DropzoneJS Demo Code End
+
     </script>
+    <script src="~/Content/ckeditor/ckeditor.js"></script>
+    <script src="~/Content/ckfinder/ckfinder.js"></script>
     @RenderSection("scripts", required: false)
 </body>
+
 </html>
