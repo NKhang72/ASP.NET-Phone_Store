@@ -22,7 +22,7 @@ namespace PhoneStoreWeb.Controllers
         public ActionResult getProductbyMeta(int id)
         {
             var v = from t in db.tb_Product
-                    where t.ProductCategory == id.ToString()
+                    where t.ProductCategory == id
                     select t;
             return View(v.ToList());
         }

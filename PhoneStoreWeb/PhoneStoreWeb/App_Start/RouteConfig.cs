@@ -19,6 +19,12 @@ namespace PhoneStoreWeb
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
                 namespaces: new[] {"PhoneStoreWeb.Controllers"}
             );
+            routes.MapRoute(
+                name: "Category",
+                url: "san-pham",
+                defaults: new { controller = "Category", action = "getProductbyMeta", id = UrlParameter.Optional },
+                namespaces: new[] { "PhoneStoreWeb.Controllers" }
+            );
         }
     }
 }

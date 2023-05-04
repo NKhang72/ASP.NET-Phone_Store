@@ -37,8 +37,6 @@ namespace PhoneStoreWeb.Areas.Admin.Controllers
         [ValidateInput(false)]
         public ActionResult Add(tb_Product model, List<string> Images, List<int> rDefault)
         { 
-
-
          var v = from t in db.tb_Product
                  where t.Hide == true
                  select t;

@@ -135,20 +135,42 @@
 
                                 @foreach (var i in Model)
                                 {
-                                    <div class="product-item ">
-                                        <div class="product discount product_filter">
-                                            <div class="product_image">
-                                                <img src="@i.Image" alt="">
+                                    if (i.Sale.Equals(true))
+                                    {
+                                        int perent = (int)(100 - ((i.PriceSale * 100) / i.Price));
+                                        <div class="product-item">
+                                            <div class="product discount product_filter">
+                                                <div class="product_image">
+                                                    <img src="@i.Image" alt="">
+                                                </div>
+                                                <div class="favorite favorite_left"></div>
+                                                <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>@perent%</span></div>
+                                                <div class="product_info">
+                                                    <h6 class="product_name"> @Html.ActionLink(i.Title, "getProductDetails", "ProductDetail", new { @id = i.id }, null)</h6>
+                                                    <div class="product_price">@PhoneStoreWeb.Models.Common.Common.FormatNumber(i.PriceSale)<span>@PhoneStoreWeb.Models.Common.Common.FormatNumber(i.Price)</span></div>
+
+                                                </div>
                                             </div>
-                                            <div class="favorite favorite_left"></div>
-                                            <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
-                                            <div class="product_info">
-                                                <h6 class="product_name"> @Html.ActionLink(i.Title, "getProductDetails", "ProductDetail", new { @id = i.id }, null)</h6>
-                                                <div class="product_price">@i.PriceSale<span>@i.Price</span></div>
-                                            </div>
+                                            <div class="red_button add_to_cart_button"><a href="#" class="btnAddToCart" data-id=@i.id>add to cart</a></div>
                                         </div>
-                                        <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-                                    </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="product-item">
+                                            <div class="product discount product_filter">
+                                                <div class="product_image">
+                                                    <img src="@i.Image" alt="">
+                                                </div>
+                                                <div class="favorite favorite_left"></div>
+
+                                                <div class="product_info">
+                                                    <h6 class="product_name"> @Html.ActionLink(i.Title, "getProductDetails", "ProductDetail", new { @id = i.id }, null)</h6>
+                                                    <div class="product_price">@PhoneStoreWeb.Models.Common.Common.FormatNumber(i.Price)</div>
+                                                </div>
+                                            </div>
+                                            <div class="red_button add_to_cart_button"><a href="#" class="btnAddToCart" data-id=@i.id>add to cart</a></div>
+                                        </div>
+                                    }
                                 }
                             </div>
                         </div>

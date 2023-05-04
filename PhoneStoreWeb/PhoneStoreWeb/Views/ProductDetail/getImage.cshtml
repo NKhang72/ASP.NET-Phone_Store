@@ -1,0 +1,14 @@
+﻿@model IEnumerable<PhoneStoreWeb.Models.tb_ProductImage>
+@foreach (var i in Model)
+{
+    if (i.isDefault == true)
+    {
+
+        <li class="active"><img src="@i.image" alt="" data-image="@i.image"></li>
+       
+    }
+    else
+    {
+        <li><img src="@i.image" alt="" data-image="@i.image"></li>
+    }
+}

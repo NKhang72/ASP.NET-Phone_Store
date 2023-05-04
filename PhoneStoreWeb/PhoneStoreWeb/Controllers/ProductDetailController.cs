@@ -20,6 +20,12 @@ namespace PhoneStoreWeb.Controllers
                     select t;
             return View(v.FirstOrDefault());
         }
-    
+        public ActionResult getImage(int id)
+        {
+            var v = from t in db.tb_ProductImage
+                    where t.id == id
+                    select t;
+            return View(v.ToList());
+        }
     }
 }
