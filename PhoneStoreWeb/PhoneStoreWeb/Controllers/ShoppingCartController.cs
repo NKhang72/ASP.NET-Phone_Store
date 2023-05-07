@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
 using PhoneStoreWeb.Models;
-
+using PagedList;
 namespace PhoneStoreWeb.Controllers
 {
 
@@ -188,6 +188,24 @@ namespace PhoneStoreWeb.Controllers
         {
             
             return View();
+        }
+        public ActionResult SearchOder()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
+        public ActionResult GetOrderbyPhone(string sdt)
+        {
+           
+            var items = db.tb_Order.Where(x=>x.Phone==sdt).OrderByDescending(x => x.CreateDate);
+            return View(items.ToList());
+        }
+        public ActionResult View(int id)
+        {
+            var item = db.tb_Order.Find(id);
+            return View(item);
         }
 
     }
