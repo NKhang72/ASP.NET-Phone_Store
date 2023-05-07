@@ -194,7 +194,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="admin/products" class="nav-link">
                                 <i class="nav-icon fa fa-apple-alt"></i>
                                 <p>
                                     Sản phẩm
@@ -204,25 +204,31 @@
 
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/Content/admin/index.html" class="nav-link">
+                                    <a href=@Url.Action("Index", "Products") class="nav-link">
+                                        <i class="fa fa-mobile nav-icon"></i>
+                                        <p>Tất cả sản phẩm </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href=@Url.Action("IndexbyCategori", "Products",new { @CategoryID =1 }, null) class="nav-link">
                                         <i class="fa fa-mobile nav-icon"></i>
                                         <p>Điện thoại</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/Content/admin/index2.html" class="nav-link">
+                                    <a href=@Url.Action("IndexbyCategori", "Products",new { @CategoryID =42 }, null) class="nav-link">
                                         <i class="fa fa-laptop nav-icon"></i>
                                         <p>Laptop</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/Content/admin/index3.html" class="nav-link">
+                                    <a href=@Url.Action("IndexbyCategori", "Products",new { @CategoryID =3 }, null) class="nav-link">
                                         <i class="fa fa-tablet nav-icon"></i>
                                         <p>Tablet</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/Content/admin/index3.html" class="nav-link">
+                                    <a href=@Url.Action("IndexbyCategori", "Products",new { @CategoryID =4 }, null) class="nav-link">
                                         <i class="fa fa-headphones nav-icon"></i>
                                         <p>Phụ kiện</p>
                                     </a>
@@ -258,10 +264,10 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link">
+                            <a href="@Url.Action("Index", "ShoppingCart")" class="nav-link">
                                 <i class="nav-icon fa fa-gift" aria-hidden="true"></i>
                                 <p>
-                                    Sale top
+                                    Order
 
                                 </p>
                             </a>

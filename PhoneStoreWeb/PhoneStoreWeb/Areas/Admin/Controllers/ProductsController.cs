@@ -27,6 +27,21 @@ namespace PhoneStoreWeb.Areas.Admin.Controllers
             ViewBag.Page = page;
             return View(items);
         }
+        public ActionResult IndexbyCategori(int? page, int CategoryID)
+        {
+            IEnumerable<tb_Product> items = db.tb_Product.Where(x=>x.tb_ProductCategory.id== CategoryID).OrderByDescending(x => x.id);
+           
+            var pageSize = 10;
+            if (page == null)
+            {
+                page = 1;
+            }
+            var pageIndex = page.HasValue ? Convert.ToInt32(page) : 1;
+            items = items.ToPagedList(pageIndex, pageSize);
+            ViewBag.PageSize = pageSize;
+            ViewBag.Page = page;
+            return View(items);
+        }
         public ActionResult Add()
         {
             ViewBag.ProductCategory = new SelectList(db.tb_ProductCategory.ToList(), "id", "Title");

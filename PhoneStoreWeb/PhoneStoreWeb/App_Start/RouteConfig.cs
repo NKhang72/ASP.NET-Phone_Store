@@ -25,6 +25,12 @@ namespace PhoneStoreWeb
                 defaults: new { controller = "Category", action = "getProductbyMeta", id = UrlParameter.Optional },
                 namespaces: new[] { "PhoneStoreWeb.Controllers" }
             );
+            routes.MapRoute(
+                name: "ShoppingCart",
+                url: "gio-hang",
+                defaults: new { controller = "ShoppingCart", action = "Index", meta = UrlParameter.Optional },
+                namespaces: new[] { "PhoneStoreWeb.Controllers" }
+            );
         }
     }
 }

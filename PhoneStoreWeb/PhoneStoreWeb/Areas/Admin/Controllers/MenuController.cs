@@ -14,6 +14,7 @@ namespace PhoneStoreWeb.Areas.Admin.Controllers
         // GET: Admin/Menu
         public ActionResult Index()
         {
+            
             var v = from t in db.tb_Menu
                     where t.Hide == true
                     select t;

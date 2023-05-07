@@ -45,7 +45,7 @@
     <!-- Default box -->
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">@ViewBag.Title</h3>
+            <h3 class="card-title"> @ViewBag.Title</h3>
 
             <div class="card-tools">
                 <a href="/admin/products/add" class="btn btn-primary">Thêm mới</a>
@@ -99,28 +99,28 @@
                             {
                                 strImg = CheckImage;
                             }
-                    <tr id="trow_@item.id">
-                        <td><input type="checkbox" class="cbkItem" value="@item.id" /></td>
-                        <td>@i</td>
-                        <td><img class="imgproduct" data-id="@item.id" src="@strImg" width="50" /></td>
-                        <td>@item.Title</td>
-                        <td>@item.tb_ProductCategory.Title</td>
-                        <td>@item.Quantity</td>
-                        <td>@item.Price, 0</td>
-                        <td>@item.PriceSale, 0</td>
-                        <td>@item.CreateDate.ToString()</td>
-                        <td class="text-center">
-                            <a href='#' data-id="@item.id" class="btnHome">@Html.Raw(strCheckSale)</a>
-                        </td>
+                            <tr id="trow_@item.id">
+                                <td><input type="checkbox" class="cbkItem" value="@item.id" /></td>
+                                <td>@i</td>
+                                <td><img class="imgproduct" data-id="@item.id" src="@strImg" width="50" /></td>
+                                <td>@item.Title</td>
+                                <td>@item.tb_ProductCategory.Title</td>
+                                <td>@item.Quantity</td>
+                                <td>@item.Price, 0</td>
+                                <td>@item.PriceSale, 0</td>
+                                <td>@item.CreateDate.ToString()</td>
+                                <td class="text-center">
+                                    <a href='#' data-id="@item.id" class="btnHome">@Html.Raw(strCheckSale)</a>
+                                </td>
 
-                        <td class="text-center">
-                            <a href='#' data-id="@item.id" class="btnActive">@Html.Raw(strCheck)</a>
-                        </td>
-                        <td>
-                            <a href="/admin/Products/edit/@item.id" class="btn btn-sm btn-primary">Sửa</a>
-                            <a href="#" data-id="@item.id" class="btn btn-sm btn-danger btnDelete">Xóa</a>
-                        </td>
-                    </tr>
+                                <td class="text-center">
+                                    <a href='#' data-id="@item.id" class="btnActive">@Html.Raw(strCheck)</a>
+                                </td>
+                                <td>
+                                    <a href="/admin/Products/edit/@item.id" class="btn btn-sm btn-primary">Sửa</a>
+                                    <a href="#" data-id="@item.id" class="btn btn-sm btn-danger btnDelete">Xóa</a>
+                                </td>
+                            </tr>
                             i++;
                         }
                     }
