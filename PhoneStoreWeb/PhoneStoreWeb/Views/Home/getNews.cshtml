@@ -9,7 +9,7 @@
                 <div class="blog_content d-flex flex-column align-items-center justify-content-center text-center">
                     <h4 class="blog_title">@i.Title</h4>
                     <span class="blog_meta">@i.CreateBy | @i.CreateDate</span>
-                    @Html.ActionLink("Read More", "getNewsbyMeta", new { @meta = i.Meta }, null)
+                    @Html.ActionLink("Read More", "getNewsbyId","News",new { @id = i.id }, null)
                 </div>
             </div>
         </div>

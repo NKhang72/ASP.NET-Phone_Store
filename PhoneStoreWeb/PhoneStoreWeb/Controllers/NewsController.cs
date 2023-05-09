@@ -17,12 +17,12 @@ namespace PhoneStoreWeb.Controllers
             return View();
         }
 
-        public ActionResult getNewsbyMeta(String meta)
+        public ActionResult getNewsbyId(int id)
         {
             var v = from t in db.tb_News
-                    where t.Meta == meta
+                    where t.id == id
                     select t;
-            return View(v.ToList());
+            return View(v.FirstOrDefault());
         }
     }
 }

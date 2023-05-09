@@ -36,15 +36,9 @@ namespace PhoneStoreWeb.Areas.Admin.Controllers
     [ValidateInput(false)]
     public ActionResult Add(tb_News model)
     {
-        var v = from t in db.tb_News
-                where t.Hide == true
-                select t;
-        model.id = v.ToList().LastOrDefault().id + 1;
-
         if (ModelState.IsValid)
         {
             model.CreateDate = DateTime.Now;
-            model.CategoryId = 3;
             model.ModifierDate = DateTime.Now;
             if (string.IsNullOrEmpty(model.Meta))
                 model.Meta = PhoneStoreWeb.Models.Common.Filter.FilterChar(model.Title);
@@ -73,21 +67,21 @@ namespace PhoneStoreWeb.Areas.Admin.Controllers
     [HttpPost]
     [ValidateAntiForgeryToken]
     [ValidateInput(false)]
-    public ActionResult Edit(tb_News model)
-    {
-        if (ModelState.IsValid)
+        public ActionResult Edit(tb_News model)
         {
-            model.ModifierDate = DateTime.Now;
-            model.Meta = PhoneStoreWeb.Models.Common.Filter.FilterChar(model.Title);
-            db.tb_News.Attach(model);
-            db.Entry(model).State = System.Data.Entity.EntityState.Modified;
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                model.ModifierDate = DateTime.Now;
+                model.Meta = model.Meta = PhoneStoreWeb.Models.Common.Filter.FilterChar(model.Title);
+                db.tb_News.Attach(model);
+                db.Entry(model).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(model);
         }
-        return View(model);
-    }
 
-    [HttpPost]
+        [HttpPost]
     public ActionResult Delete(int id)
     {
         var item = db.tb_News.Find(id);
