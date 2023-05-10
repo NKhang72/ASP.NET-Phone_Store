@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PhoneStoreWeb.Models;
 
 namespace PhoneStoreWeb.Areas.Admin.Controllers
 {
@@ -11,7 +12,20 @@ namespace PhoneStoreWeb.Areas.Admin.Controllers
         // GET: Admin/Home
         public ActionResult Index()
         {
+           
             return View();
+        }
+        public ActionResult gerUserName() {
+            UserLogin userLogin = (UserLogin)Session["USER_SESSION"];
+            if (userLogin != null)
+            {
+                return PartialView(userLogin);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Login");
+            }
+            return PartialView(); 
         }
     }
 }

@@ -52,7 +52,7 @@
                 {
                     @Html.AntiForgeryToken()
                     @Html.ValidationSummary(false)
-                    @Html.EditorFor(x => x.id)
+                    @Html.HiddenFor(x => x.id)
                     <form>
                         <div class="card-body">
                             <div class="form-group">

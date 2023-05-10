@@ -11,7 +11,12 @@ namespace PhoneStoreWeb.Areas.Admin.Controllers
 {
     public class CategoryController : Controller
     {
-        PhoneStoreEntities1 db = new PhoneStoreEntities1();
+        PhoneStoreEntities1 db = null;
+        public CategoryController()
+        {
+            db = new PhoneStoreEntities1();
+            
+        }
         // GET: Admin/Category
         public ActionResult Index()
         {
