@@ -26,6 +26,18 @@ namespace PhoneStoreWeb
                 namespaces: new[] { "PhoneStoreWeb.Controllers" }
             );
             routes.MapRoute(
+            name: "NewsList",
+            url: "tin-tuc",
+            defaults: new { controller = "News", action = "Index", meta = UrlParameter.Optional },
+            namespaces: new[] {"PhoneStoreWeb.Controllers" }
+            );
+            routes.MapRoute(
+            name: "DetailNew",
+            url: "{meta}-n{id}",
+            defaults: new { controller = "News", action = "Detail", id = UrlParameter.Optional },
+            namespaces: new[] {"PhoneStoreWeb.Controllers" }
+            );
+            routes.MapRoute(
                 name: "ShoppingCart",
                 url: "gio-hang",
                 defaults: new { controller = "ShoppingCart", action = "Index", meta = UrlParameter.Optional },

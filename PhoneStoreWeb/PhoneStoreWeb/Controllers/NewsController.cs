@@ -1,9 +1,11 @@
 ﻿using PhoneStoreWeb.Models;
 using System;
 using System.Collections.Generic;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
 
 namespace PhoneStoreWeb.Controllers
 {
@@ -14,7 +16,24 @@ namespace PhoneStoreWeb.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            //var pageSize = 1;
+            //if (page == null)
+            //{
+            //    page = 1;
+            //}
+            //IEnumerable<News> items = db.News.OrderByDescending(x => x.CreatedDate);
+            //var pageIndex = page.HasValue ? Convert.ToInt32(page) : 1;
+            //items = items.ToPagedList(pageIndex, pageSize);
+            //ViewBag.PageSize = pageSize;
+            //ViewBag.Page = page;
+            var items = db.tb_News.ToList();
+            return View(items);
+        }
+
+        public ActionResult Detail(int id)
+        {
+            var item = db.tb_News.Find(id);
+            return View(item);
         }
 
         public ActionResult getNewsbyId(int id)
